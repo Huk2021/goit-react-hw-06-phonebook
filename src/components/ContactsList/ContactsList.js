@@ -38,5 +38,5 @@ ContactsList.defaultProps = {
 
 ContactsList.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
-  onDeleteContact: PropTypes.func.isRequired,
+  
 };
