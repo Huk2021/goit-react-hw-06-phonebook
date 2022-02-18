@@ -1,5 +1,7 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import {addContact} from '../../redux/actions'
 import {
   ContainerForm,
   FormContact,
@@ -8,7 +10,8 @@ import {
   Button,
 } from "./Form.styled";
 
-export default function Form({ onaddContact } ) {
+export default function Form() {
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -28,7 +31,7 @@ export default function Form({ onaddContact } ) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onaddContact( name, number );
+    dispatch(addContact({ name, number }));
     setName('');
     setNumber('');
   };
@@ -63,7 +66,7 @@ export default function Form({ onaddContact } ) {
   }
 
 
-Form.propTypes = {
-  onaddContact: PropTypes.func.isRequired,
-};
+// Form.propTypes = {
+//   addContact: PropTypes.func.isRequired,
+// };
 
