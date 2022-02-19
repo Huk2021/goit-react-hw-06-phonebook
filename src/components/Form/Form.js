@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import {addContact} from '../../redux/actions'
 import {
@@ -66,7 +65,4 @@ export default function Form() {
   }
 
 
-// Form.propTypes = {
-//   addContact: PropTypes.func.isRequired,
-// };
 
